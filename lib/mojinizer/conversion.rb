@@ -45,7 +45,9 @@ module Mojinizer
     s=s.gsub(/(ux)([ieo])/, 'w\2')                            # ウァウィウェ, ウァ-->uxa-->wa
     #---------------------------------------------------------
     s=s.strip.gsub(/(xtsu)$/,'h!')                            # Recombine hanging 'っ' followed by EOL
-    s=s.gsub(/([aiueo]?)(\-)/, '\1\1')                        # Replace boubiki chars and double preceding vowel
+    # TODO: Figure out if this is necessary in any case and modify it to fit in those situations, but for now it's useless.
+    #s=s.gsub(/([aiueo]?)(\-)/, '\1\1')                        # Replace boubiki chars and double preceding vowel
+
     #---------------------------------------------------------
     # Cleanup specifically for source strings that contain spaces!
     s=s.gsub(/( +)([^a-z|A-z])/, '\2')                        # Remove spaces before any non-alphabetical char
